@@ -1,0 +1,253 @@
+Стили модального окна
+.modal {
+    display: none; /* По умолчанию скрыто */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    animation: zoomIn 0.3s ease;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Анимация открытия */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* модалка */
+
+/* Стили модального окна */
+.modal {
+    display: none; /* По умолчанию скрыто */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    animation: zoomIn 0.3s ease;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: red;
+    font-size: 90px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Анимация открытия */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.no-scroll {
+    overflow: hidden;
+    height: 100%; /* Запобігає прокручуванню сторінки */
+}
+.pointer{
+    cursor:pointer;
+}
+.pointer:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease; /* Плавний перехід */
+}
+
+
+/* машина */
+.clickable-img {
+    cursor: pointer;
+    z-index: 12;
+    position: relative; /* Переконайтесь, що z-index працює */
+}
+
+.width{
+    width: 3000px!important;
+}
+
+
+.rotating-cubes {
+    position: relative;
+    display: inline-block; /* Для компактного розміщення тексту */
+    color: #000; /* Колір тексту */
+    text-decoration: none; /* Забрати підкреслення */
+    font-size: 18px; /* Розмір шрифту */
+    font-weight: bold; /* Жирний шрифт */
+    padding: 0 40px; /* Відступи для місця під кубики */
+}
+
+/* Кубик зліва */
+.rotating-cubes::before,
+.rotating-cubes::after {
+    content: ""; /* Псевдоелемент */
+    position: absolute;
+    top: 50%; /* Розташування по вертикалі */
+    transform: translateY(-50%) rotate(0deg);
+    width: 24px; /* Розмір SVG */
+    height: 24px;
+    background-image: url('images/10.svg'); /* Шлях до SVG */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: spin 3s linear infinite; /* Анімація обертання */
+}
+
+/* Лівий кубик */
+.rotating-cubes::before {
+    left: -40px; /* Відступ ліворуч */
+}
+
+/* Правий кубик */
+.rotating-cubes::after {
+    right: -40px; /* Відступ праворуч */
+}
+
+/* Анімація обертання */
+@keyframes spin {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+
+/* Контейнер для позиціонування */
+.image-container {
+    position: relative; /* Позиціонування для дочірніх елементів */
+    display: inline-block;
+}
+
+.base-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 0;
+    left: -223px;
+    width: 167%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0; /* Початкова прозорість */
+    transition: opacity 0.3s ease; /* Плавний перехід */
+
+        cursor: pointer; /* Курсор при наведенні */
+}
+
+/* Перелом для екранів до 1200px */
+@media (max-width: 1200px) {
+    .overlay-image {
+        /* left: -150px;
+        width: 150%; */
+    }
+}
+
+/* Перелом для екранів до 992px */
+@media (max-width: 992px) {
+    .overlay-image {
+        /* left: -100px;
+        width: 130%; */
+    }
+}
+
+/* Перелом для екранів до 768px */
+@media (max-width: 768px) {
+    .overlay-image {
+        left: -230px;
+    }
+}
+@media (max-width: 640px) {
+    .overlay-image {
+        left: -188px;
+    }
+}
+
+/* Перелом для екранів до 576px */
+@media (max-width: 576px) {
+    .overlay-image {
+        left: -188px;
+    }
+}
+@media (max-width: 490px) {
+    .overlay-image {
+        left: -145px;
+    }
+}
+
+/* Перелом для дуже маленьких екранів (до 375px) */
+@media (max-width: 375px) {
+    .overlay-image {
+        left: -130px;
+
+    }
+}
+
+.image-container:hover .overlay-image {
+    opacity: 1; /* Зміна прозорості при ховері */
+}
